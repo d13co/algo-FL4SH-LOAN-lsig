@@ -1,0 +1,62 @@
+#pragma version 5
+txn TypeEnum # Public path: flash loan. Validate withdrawals:
+int pay
+== # 1) payment transactions only
+txn CloseRemainderTo
+global ZeroAddress
+== # 2) no close-remainder-to
+&&
+txn RekeyTo
+global ZeroAddress
+== # 3) no rekey-to
+&&
+txn GroupIndex
+int 0
+== # (1,2,3) -> at position zero (first in group)
+&&
+global GroupSize # And validate repayment at last position in group...
+int 1
+-
+gtxns TypeEnum 
+int pay
+== # 1) ...payment type...
+global GroupSize
+int 1
+-
+gtxns Receiver
+gtxn 0 Sender # ...to "us" (sender of first txn)...
+==
+&&
+global GroupSize
+int 1
+-
+gtxns Amount # ..with amount greater than...
+int 1100000 
+txn Fee
+txn Amount
++
+mulw
+int 0
+int 1000000
+divmodw
+pop
+pop
+swap
+!
+assert # ...110% of (fees + amount of first txn in group)
+>=
+&&
+&&
+gtxn 0 Receiver # Admin Path: First txn is from/to admin address. Admin can do anything in the rest of the group
+addr DTHIRTEENNLSYGLSEXTXC6X4SVDWMFRCPAOAUCXWIXJRCVBWIIGLYARNQE
+==
+gtxn 0 Sender
+addr DTHIRTEENNLSYGLSEXTXC6X4SVDWMFRCPAOAUCXWIXJRCVBWIIGLYARNQE
+==
+&&
+byte 0xd13e2100c8b1eca2 
+byte ""
+!= # no-op; bruteforced the 0xd13 value to get a nice lsig address 
+&&
+|| # main branch: Public OR Admin paths
+return
