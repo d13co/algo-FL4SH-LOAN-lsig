@@ -56,7 +56,7 @@ There is a rudimentary Javascript SDK you can use:
 
 The initial funding will be 1.3 $ALGO.
 
-This is deployed to Algorand [mainnet](https://algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI), [testnet](https://testnet.algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI) and [betanet](https://betanet.algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI) with the address:
+This is deployed to Algorand [mainnet](https://algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI), [testnet](https://testnet.algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI), [betanet](https://betanet.algoexplorer.io/address/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI) and Voi [testnet](https://voi.observer/explorer/account/FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI/transactions). The FL4SHLOAN address is:
 
 ```
 FL4SHLOANLERAK6AFTBSBIL2WIWCRUFY7XWQK57H3EXM6GMMGMPT7C3UKI
